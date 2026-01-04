@@ -1,0 +1,27 @@
+{
+  "name": "discord-bots-event",
+  "version": "1.0.0",
+  "description": "Discord Bot Event - Starting template for participants to build creative Discord bots",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "discord",
+    "bot",
+    "discord.js",
+    "event",
+    "template"
+  ],
+  "author": "Discord Bot Event Organizers",
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "^14.14.1",
+    "dotenv": "^16.3.1"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
