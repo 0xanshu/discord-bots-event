@@ -40,14 +40,6 @@ module.exports = {
       });
     }
 
-    // Add additional information
-    helpEmbed.addFields({
-      name: "== How to add more commands ==",
-      value:
-        "Create new `.js` files in the `commands/` directory following the same structure as existing commands.",
-      inline: false,
-    });
-
     await interaction.reply({ embeds: [helpEmbed] });
   },
 };

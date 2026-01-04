@@ -31,7 +31,7 @@ for (const file of commandFiles) {
 // Register slash commands
 async function registerCommands() {
   const commands = Array.from(client.commands.values()).map((cmd) =>
-    cmd.data.toJSON()
+    cmd.data.toJSON(),
   );
   const rest = new REST().setToken(process.env.BOT_TOKEN);
 
@@ -40,10 +40,10 @@ async function registerCommands() {
       process.env.GUILD_ID
         ? Routes.applicationGuildCommands(
             process.env.CLIENT_ID,
-            process.env.GUILD_ID
+            process.env.GUILD_ID,
           )
         : Routes.applicationCommands(process.env.CLIENT_ID),
-      { body: commands }
+      { body: commands },
     );
     console.log("✅ Commands registered!");
   } catch (error) {
@@ -52,7 +52,7 @@ async function registerCommands() {
 }
 
 // Bot ready
-client.once("ready", async () => {
+client.once("clientReady", async () => {
   console.log(`${client.user.tag} is online!`);
   await registerCommands();
 });

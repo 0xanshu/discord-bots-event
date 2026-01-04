@@ -25,7 +25,7 @@ module.exports = {
     await interaction.editReply({
       content:
         `Pong!\n` +
-        `ot Latency: ${latency}ms\n` +
+        `Bot Latency: ${latency}ms\n` +
         `API Latency: ${apiLatency}ms`,
     });
   },

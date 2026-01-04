@@ -2,7 +2,7 @@
 
 Welcome to the Discord Bots Event! This repository provides a clean, professional starting point for building creative Discord bots using JavaScript and Discord.js v14.
 
-## 🚀 Quick Start
+## Startup your repo!
 
 Follow these steps to get your bot up and running:
 
@@ -10,41 +10,63 @@ Follow these steps to get your bot up and running:
 
 1. **Fork this repository** to your GitHub account
 2. **Clone your forked repository** to your local machine:
+
    ```bash
-   git clone https://github.com/YOUR_USERNAME/discord-bots-event.git
+   git clone YOUR_GITHUB_FORK_URL
    cd discord-bots-event
    ```
 
 ### 2. Install Dependencies
 
-Make sure you have Node.js 16.0.0 or higher installed, then run:
+Make sure you have Node.js 16.0.0 or higher installed by using, 
+
+```bash
+node -v
+```
+then run:
 
 ```bash
 npm install
+
+or
+
+pnpm install
+
+or
+
+yarn install
 ```
 
 ### 3. Set Up Your Discord Bot
 
-#### Create a Discord Application
+#### Creating a Discord Application
 
 1. Go to the [Discord Developer Portal](https://discord.com/developers/applications)
 2. Click "New Application" and give it a name
 3. Go to the "Bot" section in the sidebar
 4. Click "Add Bot" and confirm
 5. Copy your bot token (keep this secret!)
+6. Add this to your `.env` file as `BOT_TOKEN`
+7. Under "Privileged Gateway Intents", enable "Message Content Intent"
 
 #### Get Your Application ID
 
 1. In your Discord application, go to "General Information"
 2. Copy your "Application ID" (also called Client ID)
+3. Add this to your `.env` file as `CLIENT_ID`
 
 #### Invite Your Bot to a Server
 
 1. Go to the "OAuth2" > "URL Generator" section
 2. Select "bot" and "applications.commands" scopes
 3. Select the permissions your bot needs (at minimum: "Send Messages", "Use Slash Commands")
+4. Keep "Guild Install" selected 
 4. Copy the generated URL and open it in your browser
 5. Select a server and authorize your bot
+6. (Optional) For faster command updates during development, you can create a test server and get its ID:
+   - Right-click your server icon in Discord
+   - Click "Copy ID"
+   - Add this to your `.env` file as `GUILD_ID`
 
 ### 4. Configure Environment Variables
 
@@ -66,6 +88,8 @@ npm install
 
 ### 5. Start Your Bot
 
+if you used npm:
+
 ```bash
 npm start
 ```
@@ -73,9 +97,8 @@ npm start
 If everything is set up correctly, you should see:
 
 ```
-🤖 Bot is ready! Logged in as YourBot#1234
-📊 Serving 1 servers
-✅ Successfully reloaded 2 guild application (/) commands.
+<YOUR_BOT_NAME> is online!
+✅ Commands registered!
 ```
 
 ### 6. Test Your Bot
