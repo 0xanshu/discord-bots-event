@@ -18,7 +18,7 @@ Follow these steps to get your bot up and running:
 
 ### 2. Install Dependencies
 
-Make sure you have Node.js 16.0.0 or higher installed by using, 
+Make sure you have [Node.js 16.0.0](https://nodejs.org/en/download) or higher installed by using, 
 
 ```bash
 node -v
@@ -37,7 +37,25 @@ or
 yarn install
 ```
 
-### 3. Set Up Your Discord Bot
+### 3. Configure Environment Variables
+
+1. Copy `.env.example` to `.env`:
+
+   ```bash
+   cp .env.example .env
+   ```
+
+2. Edit `.env` and fill in your values:
+
+   ```env
+   BOT_TOKEN=your_bot_token_here
+   CLIENT_ID=your_client_id_here
+   GUILD_ID=your_guild_id_here
+   ```
+
+   **Note:** `GUILD_ID` is used to update commands instantly during development.
+
+### 4. Set Up Your Discord Bot
 
 #### Creating a Discord Application
 
@@ -68,33 +86,23 @@ yarn install
    - Click "Copy ID"
    - Add this to your `.env` file as `GUILD_ID`
 
-### 4. Configure Environment Variables
-
-1. Copy `.env.example` to `.env`:
-
-   ```bash
-   cp .env.example .env
-   ```
-
-2. Edit `.env` and fill in your values:
-
-   ```env
-   BOT_TOKEN=your_bot_token_here
-   CLIENT_ID=your_client_id_here
-   GUILD_ID=your_guild_id_here
-   ```
-
-   **Note:** `GUILD_ID` is optional but recommended for development. It makes slash commands update instantly in your test server instead of taking up to 1 hour globally.
-
 ### 5. Start Your Bot
 
-if you used npm:
+now start your bot:
 
 ```bash
 npm start
+
+or
+
+pnpm start
+
+or
+
+yarn start
 ```
 
-If everything is set up correctly, you should see:
+If everything is set up correctly, you should see in your terminal:
 
 ```
 <YOUR_BOT_NAME> is online!
@@ -112,19 +120,20 @@ In your Discord server, try these commands:
 
 ```
 discord-bots-event/
-├── commands/           # Slash commands
+├── commands/          # Slash commands
 │   ├── ping.js        # Basic ping command
 │   └── help.js        # Help command
 ├── utils/             # Utility functions
+│   ├── core.js        # Core utility functions
 │   └── helpers.js     # Common helper functions
-├── index.js           # Main bot file
+├── bot.js             # Main bot file
 ├── package.json       # Dependencies and scripts
 ├── .env.example       # Environment variables template
-├── .gitignore        # Git ignore patterns
-└── README.md         # This file
+├── .gitignore         # Git ignore patterns
+└── README.md          # This file
 ```
 
-## 🛠️ Adding New Commands
+## Adding New Commands
 
 To add a new slash command:
 
@@ -146,8 +155,11 @@ module.exports = {
 };
 ```
 
-3. Restart your bot to load the new command
-4. The command will be automatically registered with Discord
+3. Restart your bot to load the new command.
+4. The command will be automatically registered with Discord.
+
+**Note:**  
+Just add your command file to the `commands/` directory and restart the bot.
 
 ### Command Options
 
@@ -167,7 +179,7 @@ data: new SlashCommandBuilder()
             .setRequired(false)),
 ```
 
-## 🔧 Using Utility Functions
+## Using Utility Functions
 
 The `utils/helpers.js` file contains useful functions you can import and use:
 
@@ -188,14 +200,16 @@ if (!validation.isValid) {
 }
 ```
 
-## 🌐 Adding External APIs
+## Adding External APIs
 
 You can integrate external APIs to make your bot more interesting:
 
 1. **Install additional packages** if needed:
 
    ```bash
-   npm install axios  # for HTTP requests
+   npm install axios      # or
+   yarn add axios         # or
+   pnpm add axios
    ```
 
 2. **Create API functions** in your utils or commands:
@@ -226,7 +240,7 @@ You can integrate external APIs to make your bot more interesting:
    }
    ```
 
-## 🎨 Creative Ideas
+## Creative Ideas
 
 Here are some ideas to make your bot unique:
 
@@ -238,7 +252,7 @@ Here are some ideas to make your bot unique:
 - **Music**: Play music from YouTube or Spotify
 - **AI Integration**: ChatGPT, image generation, sentiment analysis
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 ### Common Issues
 
@@ -265,30 +279,11 @@ Here are some ideas to make your bot unique:
 - Check that variable names match exactly (case-sensitive)
 - Restart your bot after changing `.env`
 
-### Getting Help
-
-If you encounter issues:
-
-1. Check the console output for error messages
-2. Verify your Discord bot setup in the Developer Portal
-3. Make sure all dependencies are installed (`npm install`)
-4. Check that your `.env` file is configured correctly
-
-## 📚 Resources
+## Resources
 
 - [Discord.js Documentation](https://discord.js.org/#/docs)
 - [Discord Developer Portal](https://discord.com/developers/docs)
 - [Node.js Documentation](https://nodejs.org/en/docs/)
 - [JavaScript MDN Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-
-## 📝 Event Guidelines
-
-- **Be Creative**: Build something unique and interesting!
-- **External APIs**: You're encouraged to use external APIs to enhance your bot
-- **Code Quality**: Write clean, well-commented code
-- **Documentation**: Document your bot's features and how to use them
-- **Have Fun**: This is about learning and creativity!
-
----
 
 **Good luck with your Discord bot! 🤖✨**

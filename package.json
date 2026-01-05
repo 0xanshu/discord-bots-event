@@ -2,11 +2,10 @@
   "name": "discord-bots-event",
   "version": "1.0.0",
   "description": "Discord Bot Event - Starting template for participants to build creative Discord bots",
-  "main": "index.js",
+  "main": "bot.js",
   "scripts": {
-    "start": "node index.js",
-    "dev": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node bot.js",
+    "dev": "node bot.js"
   },
   "keywords": [
     "discord",
