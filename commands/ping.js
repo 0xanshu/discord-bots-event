@@ -15,7 +15,7 @@ module.exports = {
     const latency = sent.createdTimestamp - interaction.createdTimestamp;
     const apiLatency = Math.round(interaction.client.ws.ping);
     await interaction.editReply(
-      `Pong!\nBot Latency: ${latency}ms\nAPI Latency: ${apiLatency}ms`,
+      `Pon!\nBot Latency: ${latency}ms\nAPI Latency: ${apiLatency}ms`,
     );
   },
 };
