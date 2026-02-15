@@ -18,11 +18,12 @@ Follow these steps to get your bot up and running:
 
 ### 2. Install Dependencies
 
-Make sure you have [Node.js 16.0.0](https://nodejs.org/en/download) or higher installed already on your pc. You can check your Node.js version by running:, 
+Make sure you have [Node.js 16.0.0](https://nodejs.org/en/download) or higher installed already on your pc. You can check your Node.js version by running:,
 
 ```bash
 node -v
 ```
+
 then run any one to install all the Dependencies (stick to the one you prefer):
 
 ```bash
@@ -78,10 +79,10 @@ yarn install
 1. Go to the "OAuth2" > "URL Generator" section
 2. Select "bot" and "applications.commands" scopes
 3. Select the permissions your bot needs (at minimum: "Send Messages", "Use Slash Commands")
-4. Keep "Guild Install" selected 
-4. Copy the generated URL and open it in your browser
-5. Select a server and authorize your bot
-6. (Optional) For faster command updates during development, you can create a test server and get its ID:
+4. Keep "Guild Install" selected
+5. Copy the generated URL and open it in your browser
+6. Select a server and authorize your bot
+7. (Optional) For faster command updates during development, you can create a test server and get its ID:
    - Right-click your server icon in Discord
    - Click "Copy ID"
    - Add this to your `.env` file as `GUILD_ID`
@@ -220,7 +221,7 @@ You can integrate external APIs to make your bot more interesting:
    async function fetchWeather(city) {
      try {
        const response = await axios.get(
-         `https://api.example.com/weather?city=${city}`
+         `https://api.example.com/weather?city=${city}`,
        );
        return response.data;
      } catch (error) {
@@ -287,3 +288,31 @@ Here are some ideas to make your bot unique:
 - [JavaScript MDN Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
 **Good luck with your Discord bot! 🤖✨**
+
+## Submission
+
+To complete your participation in the Discord Bots Event, please follow these steps:
+
+1. **Record a Demo Video:**
+
+- Record a short demo video showcasing your bot's features and commands in action.
+- The video should clearly demonstrate your bot running and responding in Discord.
+- Recommended formats: `.mp4`, `.mov`, or `.webm`.
+
+2. **Upload the Video to Google Drive:**
+
+- Upload your demo video to your Google Drive.
+- Set the sharing permissions to "Anyone with the link can view".
+- Copy the shareable link to your video.
+- Update your README with the link to your demo video:
+  ```markdown
+  [Demo Video](PASTE_YOUR_GOOGLE_DRIVE_LINK_HERE)
+  ```
+
+3. **Submit a Pull Request:**
+
+- Push your changes to your forked repository.
+- Create a Pull Request (PR) to the main event repository **before 6** (6:00 PM local time).
+- Ensure your PR includes your code and the Google Drive demo video link in the README.
+
+**Note:** Late submissions may not be accepted. Double-check that your video is playable and your bot works as expected before submitting your PR.
